@@ -1213,7 +1213,7 @@ hero_col1, hero_col2 = st.columns([2, 1])
 
 with hero_col1:
     st.markdown('''
-    <div class="hero-left fade-in" style="animation: fadeInUp 1s ease forwards;"><!-- Mobile Profile Image - Only shows on mobile --><img src="https://i.pinimg.com/736x/51/07/d9/5107d9f24008273da33b09e34612cb36.jpg" alt="Rohan Kashyap Profile" class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; ">Rohan Kashyap</h1>''', unsafe_allow_html=True)
+    <div class="hero-left fade-in" style="animation: fadeInUp 1s ease forwards;"><!-- Mobile Profile Image - Only shows on mobile --><img src="https://i.pinimg.com/736x/3d/fd/92/3dfd92f5d2c3e5fc82c42b43a58ec407.jpg" alt="Rohan Kashyap Profile" class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; ">Rohan Kashyap</h1>''', unsafe_allow_html=True)
         # ----------------------- Typing Animation -----------------------
     components_html("""<div style="margin-left: 0px; ">
     <span style="color:#a9c9ff;font-weight:600;">I'm a </span>
@@ -1268,9 +1268,7 @@ with hero_col2:
     if avatar:
         st.markdown('''
         <div class="avatar-container" style="width: 320px; margin: auto; perspective: 900px;">
-            <img id="avatar-img" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" 
-            alt="Rohan Kashyap avatar" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(79,124,255,0.4); transition: transform 0.3s ease;">
-        </div>
+            <img id="avatar-img" src="https://i.pinimg.com/736x/3d/fd/92/3dfd92f5d2c3e5fc82c42b43a58ec407.jpg" alt="Rohan Kashyap avatar" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(79,124,255,0.4); transition: transform 0.3s ease;"></div>
         ''', unsafe_allow_html=True)
 
 # ----------------------- About Section -----------------------
