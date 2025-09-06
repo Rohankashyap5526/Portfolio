@@ -1297,11 +1297,7 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""
-    <div class="about-profile">
-        <img src="https://i.imgur.com/yourImage.png" alt="Rohan Kashyap">
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="about-profile"><img src="Images\oojoj.png" alt="Rohan Kashyap"></div>""", unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
