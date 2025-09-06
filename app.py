@@ -888,6 +888,7 @@ iframe[srcdoc*="LOTTIE_BG_MARKER"] {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-align: center;
+    margin-left: -35%;
 }
 
 .pill {
@@ -935,6 +936,7 @@ iframe[srcdoc*="LOTTIE_BG_MARKER"] {
 @media (max-width: 768px) {
     .gradient-text {
         font-size: 2.8rem !important;
+             margin-left: 15%;
     }
 
     #typed-subtitle {
@@ -946,6 +948,7 @@ iframe[srcdoc*="LOTTIE_BG_MARKER"] {
 @media (max-width: 480px) {
     .gradient-text {
         font-size: 2.4rem !important;
+            margin-left: 15%;
     }
 
     #typed-subtitle {
@@ -958,6 +961,7 @@ iframe[srcdoc*="LOTTIE_BG_MARKER"] {
 @media (max-width: 360px) {
     .gradient-text {
         font-size: 1.8rem !important;
+            margin-left: 15%;
         
     }
 
@@ -1033,6 +1037,101 @@ iframe[srcdoc*="LOTTIE_BG_MARKER"] {
     iframe[srcdoc*="LOTTIE_BG_MARKER"] {
         transform: rotate(90deg) scale(1.6) !important;
             
+    }
+}
+
+/* ---------- About Section ---------- */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 650px;
+    padding: 30px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    animation: fadeInUp 1.2s ease forwards;
+    border-left: 4px solid #4f7cff;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-content::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79,124,255,0.25), transparent 70%);
+    z-index: 0;
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ffffff, #7fb2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #dbe9ff;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-profile {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-profile img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(127,178,255,0.3);
+    box-shadow: 0 15px 40px rgba(79,124,255,0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-profile img:hover {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 20px 50px rgba(79,124,255,0.55);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-content, .about-profile {
+        max-width: 100%;
+    }
+    .about-profile img {
+        width: 200px;
+        height: 200px;
     }
 }
             
@@ -1117,14 +1216,14 @@ with hero_col1:
         <!-- Mobile Profile Image - Only shows on mobile -->
         <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" 
              alt="Rohan Kashyap Profile" 
-             class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; margin-left: 15%; ">
+             class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; ">
             Rohan Kashyap
         </h1>''', unsafe_allow_html=True)
         # ----------------------- Typing Animation -----------------------
     components_html("""
-    <div style="margin-left: 50px; ">
+    <div style="margin-left: 0px; ">
     <span style="color:#a9c9ff;font-weight:600;">I'm a </span>
-    <span id="typed-subtitle" style="color:#7fb2ff;font-weight:700;"></span>
+    <span id="typed-subtitle" style="color:#7fb2ff;font-weight:700; font-size:20px"></span>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -1180,20 +1279,32 @@ with hero_col2:
         </div>
         ''', unsafe_allow_html=True)
 
-# ----------------------- About -----------------------
-st.markdown('<a id="skills"></a>', unsafe_allow_html=True)
-st.markdown('<div class="glass">', unsafe_allow_html=True)
-st.markdown("""
-<div class="about-content" style="display:flex; gap:18px; align-items:center;">
-  <div style="flex:1;">
-    <h3 style="margin:0;">About</h3>
-    <p style="margin-top:6px; color:#cfe6ff;">I'm a passionate Data Science developer focused on building reliable ML pipelines, deploying models, and creating intuitive analytics dashboards. I enjoy turning data into action and building products that solve real problems.</p>
-    <div style="margin-top:8px;">
-      <span class="tag">Python</span><span class="tag">MLOps</span><span class="tag">Streamlit</span><span class="tag">SQL</span>
+# ----------------------- About Section -----------------------
+st.markdown('<div class="about-section">', unsafe_allow_html=True)
+
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    st.markdown("""
+    <div class="about-content">
+        <h3>About Me</h3>
+        <p>Hello! I’m <b>Rohan Kashyap</b>, a passionate Computer Science Engineering student, 
+        data enthusiast, and aspiring software engineer. I love transforming raw data into 
+        meaningful insights, designing scalable systems, and building intelligent dashboards.</p>
+        <p>With hands-on experience in <b>Python, SQL, Power BI, MERN stack, and Machine Learning</b>, 
+        I aim to merge creativity and analytics to craft innovative solutions.</p>
     </div>
-  </div>
-  <div style="width:320px;">
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="about-profile">
+        <img src="https://i.imgur.com/yourImage.png" alt="Rohan Kashyap">
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
+
 Lottie_small = load_lottie_url("https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json")
 if Lottie_small:
     st_lottie(Lottie_small, height=160, key="small_anim")
