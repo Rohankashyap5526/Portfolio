@@ -1105,17 +1105,17 @@ iframe[srcdoc*="LOTTIE_BG_MARKER"] {
     align-items: center;
 }
 
-.about-profile iframe {
+.about-profile img {
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    object-fit: cover;
+    
     border: 4px solid rgba(127,178,255,0.3);
     box-shadow: 0 15px 40px rgba(79,124,255,0.4);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.about-profile iframe:hover {
+.about-profile img:hover {
     transform: scale(1.05) rotate(3deg);
     box-shadow: 0 20px 50px rgba(79,124,255,0.55);
 }
@@ -1129,7 +1129,8 @@ iframe[srcdoc*="LOTTIE_BG_MARKER"] {
     .about-content, .about-profile {
         max-width: 100%;
     }
-    .about-profile iframe {
+    .about-profile img {
+    
         width: 200px;
         height: 200px;
     }
@@ -1212,7 +1213,7 @@ hero_col1, hero_col2 = st.columns([2, 1])
 
 with hero_col1:
     st.markdown('''
-    <div class="hero-left fade-in" style="animation: fadeInUp 1s ease forwards;"><!-- Mobile Profile Image - Only shows on mobile --><img src="img/ap.jpeg" alt="Rohan Kashyap Profile" class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; ">Rohan Kashyap</h1>''', unsafe_allow_html=True)
+    <div class="hero-left fade-in" style="animation: fadeInUp 1s ease forwards;"><!-- Mobile Profile Image - Only shows on mobile --><img src="https://i.pinimg.com/736x/51/07/d9/5107d9f24008273da33b09e34612cb36.jpg" alt="Rohan Kashyap Profile" class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; ">Rohan Kashyap</h1>''', unsafe_allow_html=True)
         # ----------------------- Typing Animation -----------------------
     components_html("""<div style="margin-left: 0px; ">
     <span style="color:#a9c9ff;font-weight:600;">I'm a </span>
@@ -1290,7 +1291,7 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""<div class="about-profile"><iframe src="https://drive.google.com/file/d/13m_2g7LvMloCjCdZk4586bFUhtRGXtb9/preview" width="640" height="480" allow="autoplay"></iframe></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="about-profile"><img src="https://i.pinimg.com/736x/f6/60/3c/f6603c3598b548bafeab90be26f35470.jpg"></div>""", unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
