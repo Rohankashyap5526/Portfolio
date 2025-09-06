@@ -1212,7 +1212,7 @@ hero_col1, hero_col2 = st.columns([2, 1])
 
 with hero_col1:
     st.markdown('''
-    <div class="hero-left fade-in" style="animation: fadeInUp 1s ease forwards;"><!-- Mobile Profile Image - Only shows on mobile --><img src="img/ap.jpeg" alt="Rohan Kashyap Profile" class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; ">Rohan Kashyap</h1>''', unsafe_allow_html=True)
+    <div class="hero-left fade-in" style="animation: fadeInUp 1s ease forwards;"><!-- Mobile Profile Image - Only shows on mobile --><img src="img\ap.jpeg" alt="Rohan Kashyap Profile" class="mobile-profile-image"><h1 class="gradient-text" style="font-weight:900; font-size:3.8rem; margin-bottom:12px; letter-spacing: -0.03em; text-align: center; ">Rohan Kashyap</h1>''', unsafe_allow_html=True)
         # ----------------------- Typing Animation -----------------------
     components_html("""<div style="margin-left: 0px; ">
     <span style="color:#a9c9ff;font-weight:600;">I'm a </span>
@@ -1420,3 +1420,4 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 # ----------------------- Footer -----------------------
 st.markdown('<div class="footer">© 2025 • Rohan Kashyap • <a href="https://github.com" target="_blank">GitHub</a> • <a href="https://linkedin.com" target="_blank">LinkedIn</a></div>', unsafe_allow_html=True)
+
