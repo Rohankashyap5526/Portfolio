@@ -1405,17 +1405,19 @@ with cols[0]:
         if submitted:
             import requests
 
-            # 🔒 Load keys from secrets
-            SERVICE_ID = st.secrets["EMAILJS_SERVICE"]
-            TEMPLATE_ID = st.secrets["EMAILJS_TEMPLATE"]
-            PRIVATE_KEY = st.secrets["EMAILJS_PRIVATE"]  # 👈 private key (pr_...)
+            # 🔒 Load EmailJS config from secrets
+            SERVICE_ID = "service_ngxoazj"
+            TEMPLATE_ID = "template_bdgnb0a"
+            PUBLIC_KEY = "Z7Bt_Jw4u6vUKcB2R"  # Public Key
+            PRIVATE_KEY ="Xy74hoLE5Z-x8Hy29oHZD"
 
             try:
                 url = "https://api.emailjs.com/api/v1.0/email/send"
                 payload = {
                     "service_id": SERVICE_ID,
                     "template_id": TEMPLATE_ID,
-                    "accessToken": PRIVATE_KEY,  # 👈 strict mode requires accessToken
+                    "user_id": PUBLIC_KEY,  
+                     "accessToken": PRIVATE_KEY, # ✅ must use user_id with Public Key
                     "template_params": {
                         "from_name": name,
                         "from_email": email,
