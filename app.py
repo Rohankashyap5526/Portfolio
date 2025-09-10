@@ -1393,7 +1393,7 @@ st.markdown('</div></div>', unsafe_allow_html=True)
 st.markdown('<a id="contact"></a>', unsafe_allow_html=True)
 st.markdown('<div class="glass"><h3>Contact</h3>', unsafe_allow_html=True)
 
-cols = st.columns([2,1])
+cols = st.columns([2, 1])
 
 with cols[0]:
     with st.form("contact_form", clear_on_submit=True):
@@ -1403,16 +1403,19 @@ with cols[0]:
         submitted = st.form_submit_button("Send Message")
 
         if submitted:
+            import requests
+
+            # 🔒 Load keys from secrets
             SERVICE_ID = st.secrets["EMAILJS_SERVICE"]
             TEMPLATE_ID = st.secrets["EMAILJS_TEMPLATE"]
-            PRIVATE_KEY = st.secrets["EMAILJS_PRIVATE"]  # 👈 use private key
+            PRIVATE_KEY = st.secrets["EMAILJS_PRIVATE"]  # 👈 private key (pr_...)
 
             try:
                 url = "https://api.emailjs.com/api/v1.0/email/send"
                 payload = {
                     "service_id": SERVICE_ID,
                     "template_id": TEMPLATE_ID,
-                    "user_id": PRIVATE_KEY,   # 👈 use private key here
+                    "accessToken": PRIVATE_KEY,  # 👈 strict mode requires accessToken
                     "template_params": {
                         "from_name": name,
                         "from_email": email,
