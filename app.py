@@ -1403,18 +1403,16 @@ with cols[0]:
         submitted = st.form_submit_button("Send Message")
 
         if submitted:
-            import requests
-
             SERVICE_ID = st.secrets["EMAILJS_SERVICE"]
             TEMPLATE_ID = st.secrets["EMAILJS_TEMPLATE"]
-            PUBLIC_KEY = st.secrets["EMAILJS_PUBLIC"]
+            PRIVATE_KEY = st.secrets["EMAILJS_PRIVATE"]  # 👈 use private key
 
             try:
                 url = "https://api.emailjs.com/api/v1.0/email/send"
                 payload = {
                     "service_id": SERVICE_ID,
                     "template_id": TEMPLATE_ID,
-                    "user_id": PUBLIC_KEY,
+                    "user_id": PRIVATE_KEY,   # 👈 use private key here
                     "template_params": {
                         "from_name": name,
                         "from_email": email,
