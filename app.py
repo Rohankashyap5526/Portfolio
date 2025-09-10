@@ -1392,30 +1392,57 @@ st.markdown('</div></div>', unsafe_allow_html=True)
 # ----------------------- Contact -----------------------
 st.markdown('<a id="contact"></a>', unsafe_allow_html=True)
 st.markdown('<div class="glass"><h3>Contact</h3>', unsafe_allow_html=True)
+
 cols = st.columns([2,1])
+
 with cols[0]:
     with st.form("contact_form", clear_on_submit=True):
         name = st.text_input("Your name")
         email = st.text_input("Email")
         message = st.text_area("Message", height=140)
         submitted = st.form_submit_button("Send Message")
+
         if submitted:
+            import requests
+
+            SERVICE_ID = st.secrets["EMAILJS_SERVICE"]
+            TEMPLATE_ID = st.secrets["EMAILJS_TEMPLATE"]
+            PUBLIC_KEY = st.secrets["EMAILJS_PUBLIC"]
+
             try:
-                rec = pd.DataFrame([{"name":name, "email":email, "message":message}])
-                try:
-                    old = pd.read_csv("messages.csv")
-                    out = pd.concat([old, rec], ignore_index=True)
-                except Exception:
-                    out = rec
-                out.to_csv("messages.csv", index=False)
-                st.success("Thanks — message received. I'll reply soon.")
-            except Exception:
-                st.error("Could not save message")
+                url = "https://api.emailjs.com/api/v1.0/email/send"
+                payload = {
+                    "service_id": SERVICE_ID,
+                    "template_id": TEMPLATE_ID,
+                    "user_id": PUBLIC_KEY,
+                    "template_params": {
+                        "from_name": name,
+                        "from_email": email,
+                        "message": message
+                    }
+                }
+                headers = {"Content-Type": "application/json"}
+
+                response = requests.post(url, json=payload, headers=headers)
+
+                if response.status_code == 200:
+                    st.success("✅ Message sent successfully! I'll reply soon.")
+                else:
+                    st.error(f"❌ Failed to send message: {response.text}")
+
+            except Exception as e:
+                st.error(f"⚠️ Error: {e}")
+
 with cols[1]:
     contact_anim = load_lottie_url("https://assets2.lottiefiles.com/packages/lf20_jtbfg2nb.json")
     if contact_anim:
         st_lottie(contact_anim, height=220, key="contact_anim")
+
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ----------------------- Footer -----------------------
-st.markdown('<div class="footer">© 2025 • Rohan Kashyap • <a href="https://github.com/Rohankashyap5526" target="_blank">GitHub</a> </div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="footer">© 2025 • Rohan Kashyap • '
+    '<a href="https://github.com/Rohankashyap5526" target="_blank">GitHub</a> </div>',
+    unsafe_allow_html=True
+)
