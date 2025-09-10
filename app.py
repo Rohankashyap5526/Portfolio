@@ -1289,7 +1289,7 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""<div class="about-profile"><img src="https://i.pinimg.com/736x/f6/60/3c/f6603c3598b548bafeab90be26f35470.jpg"></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="about-profile"><img src="https://i.pinimg.com/736x/85/2d/a0/852da07e8028576aef9e09e4feec2cb6.jpg"></div>""", unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
@@ -1410,7 +1410,7 @@ with cols[0]:
                 out.to_csv("messages.csv", index=False)
                 st.success("Thanks — message received. I'll reply soon.")
             except Exception:
-                st.error("Could not save message locally.")
+                st.error("Could not save message")
 with cols[1]:
     contact_anim = load_lottie_url("https://assets2.lottiefiles.com/packages/lf20_jtbfg2nb.json")
     if contact_anim:
@@ -1418,4 +1418,4 @@ with cols[1]:
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ----------------------- Footer -----------------------
-st.markdown('<div class="footer">© 2025 • Rohan Kashyap • <a href="https://github.com" target="_blank">GitHub</a> • <a href="https://linkedin.com" target="_blank">LinkedIn</a></div>', unsafe_allow_html=True)
+st.markdown('<div class="footer">© 2025 • Rohan Kashyap • <a href="https://github.com/Rohankashyap5526" target="_blank">GitHub</a> </div>', unsafe_allow_html=True)
