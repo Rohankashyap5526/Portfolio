@@ -1308,7 +1308,7 @@ skills = {
     "SQL & Databases": 75,
     "Streamlit / Dash": 88,
     "Power BI / Tableau": 70,
-    "HTML / CSS / JS": 65,
+    "HTML / CSS / JS": 75,
 }
 
 # Interactive progress bars
@@ -1352,7 +1352,7 @@ st.markdown('<div class="projects-grid">', unsafe_allow_html=True)
 projects = [
     {"title":"Smart E-Learning Platform", "desc":"Adaptive learning platform with recommendations, analytics dashboards, and content personalization.", "tags":["MERN","ML","PowerBI"]},
     {"title":"Influencer Recommendation System", "desc":"ML-powered scoring model to recommend influencers based on engagement & ROI.", "tags":["Python","Streamlit","SQL"]},
-    {"title":"Anomaly Detection for Sensors", "desc":"Hybrid models for IoT anomaly detection with explainability and alerting.", "tags":["TimeSeries","PyTorch","MLOps"]},
+    {"title":"Blocode GenAI", "desc":"Platform for genrating blogs , Stories and code Using LLMs.", "tags":["Langchain","Streamlit","MLOps"]},
     {"title":"Ad Analytics Pipeline", "desc":"Scalable ETL and reporting for daily ad metrics with partitioned data model.", "tags":["Airflow","BigQuery","Dash"]},
 ]
 for p in projects:
